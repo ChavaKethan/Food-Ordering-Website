@@ -1,0 +1,101 @@
+/* paymentstyles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f5f0eb; /* Light brown background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #6c563f; /* Dark brown */
+}
+
+.payment-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.payment-option {
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.payment-option img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Make the images circular */
+    border: 2px solid #6c563f; /* Dark brown border */
+    transition: border-color 0.3s ease;
+}
+
+.payment-option img:hover {
+    border-color: #5a462f; /* Darker brown on hover */
+}
+
+.payment-option p {
+    color: #6c563f; /* Dark brown */
+    font-weight: bold;
+}
+
+.payment-details {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.payment-details h2 {
+    margin-bottom: 10px;
+    color: #6c563f; /* Dark brown */
+}
+
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #6c563f; /* Dark brown */
+}
+
+form input[type="text"],
+form input[type="password"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #6c563f; /* Dark brown */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #5a462f; /* Darker brown on hover */
+}
+
+.payment-details p {
+    color: #6c563f; /* Dark brown */
+    font-weight: bold;
+}

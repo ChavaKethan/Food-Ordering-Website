@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ArakuApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araku Valley - Must-Visit Places</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #8B4513; /* Brown background */
+            color: #fff; /* White text */
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #3e2723; /* Dark brown container background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #ff9800; /* Orange text */
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        .places {
+            margin-top: 30px;
+        }
+        .place {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #654321; /* Brown border */
+            padding-bottom: 20px;
+        }
+        .place h3 {
+            color: #ff9800; /* Orange text */
+        }
+        .place p {
+            line-height: 1.6;
+        }
+        /* Added styles for image gallery */
+        .image-gallery {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .image-gallery img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body ng-controller="ArakuController">
+    <div class="container">
+        <h1>Araku Valley - Must-Visit Places</h1>
+        <div class="places">
+            <div class="place" ng-repeat="place in places">
+                <h2>{{place.name}}</h2>
+                <p>{{place.description}}</p>
+                <img ng-src="{{place.image}}" alt="{{place.name}}" ng-click="enlargeImage($event)">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        angular.module('ArakuApp', [])
+            .controller('ArakuController', function($scope) {
+                $scope.places = [
+                    {
+                        name: 'Borra Caves',
+                        description: 'These one-million-year-old limestone caves are the deepest in the country. Located 36 km from Araku, they sit at an altitude of 1400 meters. Legend has it that a cowherd discovered these caves after his lost cow fell into them. Inside, you’ll find fascinating stalagmites and stalactites. A small Shiva temple was even built outside the cave where a Linga was found. Truly a geological wonder!',
+                        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-vfSAPz5VrboWDeCClXilPYgYwAoBYRcHpg&s'
+                    },
+                    {
+                        name: 'Ananthagiri Hill Station',
+                        description: 'Just 26 km from Araku, Anantagiri is a charming hill station perched at an altitude of 1168 meters. It’s famous for its extensive coffee plantations and numerous waterfalls. Don’t miss the viewpoint on the way to Anantagiri, offering breathtaking vistas of deep valleys and lush coffee estates.',
+                        image: 'https://th.bing.com/th/id/OIP.tAvhxq1hGz1g1Pz7NW8AoAHaD2?w=327&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7'
+                    },
+                    {
+                        name: 'Chaparai Waterfalls',
+                        description: 'Situated 13 km from Araku, Chaparai is a scenic cascade surrounded by forests. The smooth slanting rocks create a natural water slide, making it a popular spot for picnics. The stream flows through wide rock formations, creating a mesmerizing sight.',
+                        image: 'https://namastevizagblog.files.wordpress.com/2017/07/slide5_c.jpg'
+                    },
+                    {
+                        name: 'Padmapuram Gardens',
+                        description: 'These beautiful gardens are located within Araku Valley. Stroll amidst lush greenery, colorful flowers, and well-maintained pathways. The gardens also house a toy train that takes visitors on a delightful ride. A perfect place to unwind and enjoy nature.',
+                        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Z0JpSRQdgXTaKLMr1WxrS655U-vmrntw3A&s'
+                    },
+                    {
+                        name: 'Coffee Museum',
+                        description: 'If you’re a coffee enthusiast, this museum near Araku Valley is a treat. Learn about coffee cultivation, processing, and history. The aroma of freshly brewed coffee fills the air as you explore the exhibits.',
+                        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbEWV3w-F63UykapEr5466vBOkQLoV1JfSncwu5p1pYQ&s'
+                    }
+                ];
+
+                $scope.enlargeImage = function(event) {
+                    event.target.style.transform = 'scale(1.2)';
+                };
+            });
+    </script>
+</body>
+</html>

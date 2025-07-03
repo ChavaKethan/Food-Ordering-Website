@@ -1,0 +1,240 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #795548; /* Brown color theme */
+    color: #fff;
+}
+
+header {
+    background-color: #5D4037; /* Dark brown */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+#cart {
+    position: relative;
+    cursor: pointer;
+}
+
+#cart-icon {
+    width: 30px;
+    height: 30px;
+}
+
+#cart-items {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    color: #000; /* Change text color for cart items */
+}
+
+#cart-items p {
+    margin: 0;
+}
+
+#cart-items p:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+#cart-items p span {
+    font-weight: bold;
+}
+
+#proceed-to-checkout {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#proceed-to-checkout:hover {
+    background-color: #45a049;
+}
+
+#close-cart {
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#close-cart:hover {
+    background-color: #d32f2f;
+}
+
+main {
+    padding: 20px;
+}
+
+.menu-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    background-color: #6D4C41; /* Dark brown */
+}
+
+.menu-item button {
+    cursor: pointer;
+}
+
+.menu-item button:hover {
+    background-color: #5D4037; /* Dark brown */
+}
+
+.menu-item img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 10px;
+}
+/* styles.css */
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds spacing between menu items */
+}
+
+.menu-item {
+    width: calc(33.33% - 20px); /* Adjust based on the number of items you want in a row */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #6D4C41; /* Dark brown */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-item img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    margin: 5px 0;
+}
+
+.menu-item button {
+    cursor: pointer;
+    background-color: #8d6e63;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item button:hover {
+    background-color: #795548;
+}
+/* styles.css */
+#cart-items {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    color: #000; /* Change text color for cart items */
+    max-height: 300px;
+    overflow-y: auto; /* Add scrollbar if items exceed the max height */
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.cart-item p {
+    margin: 0;
+}
+
+.total-container {
+    margin-top: 10px;
+    font-weight: bold;
+}
+/* styles.css */
+#cart-items {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    color: #000; /* Change text color for cart items */
+    max-height: 300px;
+    overflow-y: auto; /* Add scrollbar if items exceed the max height */
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.cart-item p {
+    margin: 0;
+}
+
+.remove-button {
+    cursor: pointer;
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.remove-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+.total-container {
+    margin-top: 10px;
+    font-weight: bold;
+}
+

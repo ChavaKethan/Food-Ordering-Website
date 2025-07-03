@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkstyles.css">
+</head>
+<body>
+    <h1>Checkout Page &#10004;</h1>
+
+    <div class="container">
+        <div class="restaurant-logo">
+            <img src="Screenshot_2024-02-14_200637-transformed-removebg-preview.png" alt="Restaurant Logo">
+        </div>
+        <div id="cart-items" class="cart-items"></div>
+
+        <form id="delivery-form" class="delivery-form" onsubmit="return validateDelivery()">
+            <h2>Delivery Information</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br><br>
+            <button type="submit" id="proceed-to-payment">Proceed to Payment</button>
+        </form>
+    </div>
+
+    <script src="checkscript.js"></script>
+    <script>
+        function validateDelivery() {
+            // Validate delivery form fields
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+
+            if (name.trim() === '' || address.trim() === '' || phone.trim() === '') {
+                alert('Please fill in all fields.');
+                return false; // Prevent form submission
+            }
+
+            // If validation passes, update form action and allow form submission
+            document.getElementById('delivery-form').action = 'newpayment.html';
+            return true;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve cart items from localStorage
+            const storedCartItems = localStorage.getItem('cartItems');
+            if (storedCartItems) {
+                itemsInCart = JSON.parse(storedCartItems);
+                updateCart();
+            }
+        });
+    </script>
+</body>
+</html>

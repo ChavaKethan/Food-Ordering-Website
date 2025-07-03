@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUISINE HUNT | ARAKU VALLEY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="restaurents.css">
+</head>
+<body ng-app="myApp">
+    <header class="showcase">
+        <div class="container">
+            <div class="hero-text">
+                <img src="Screenshot_2024-02-14_200637-transformed-removebg-preview.png" width="300">
+                <h1>Discover the best food & Night life<span class="bold-place">Araku</span></h1>
+                <div class="search-bar">
+                    <div class="search-3">
+                        <i class="fa fa-map-marker-alt"></i>
+                        <input type="text" placeholder="ARAKU VALLEY">
+                        <i class="fa fa-caret-down"></i>
+                    </div>
+                    <div class="search-2">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="search-right" placeholder="Search for restaurant" ng-model="searchText">                
+                    </div>
+                </div>
+            </div>
+            <BR>
+            <section class="restaurants" ng-controller="restaurantController">
+                <div class="restaurant" ng-repeat="restaurant in restaurants | filter:searchText">
+                    <img src="{{ restaurant.image }}" alt="{{ restaurant.name }}">
+                    <h2>{{ restaurant.name }}</h2>
+                    <div class="rating">
+                        <span class="fa fa-star" ng-class="{ 'checked': $index < restaurant.rating }" ng-repeat="star in [1,2,3,4,5]"></span>
+                    </div>
+                    <button class="order-button" onclick="redirectToMenu()">Order Now <i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </section>
+        </div>
+    </header>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        angular.module('myApp', [])
+        .controller('restaurantController', function($scope) {
+            $scope.restaurants = [
+                { name: 'VASUNDHARA RESTAURENT', image: 'OIP (4).jpg', rating: 3 },
+                { name: 'ARAKU COFFEE', image: 'OIP (5).jpg', rating: 4 },
+                { name: 'HARITHA VALLEY', image: 'OIP (6).jpg', rating: 5 }
+            ];
+        });
+
+        function redirectToMenu() {
+            window.location.href = 'excart1.html'; // Replace 'menu.html' with the URL of the menu page
+        }
+    </script>
+</body>
+</html>
